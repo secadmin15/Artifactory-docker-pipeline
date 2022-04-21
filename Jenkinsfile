@@ -5,13 +5,13 @@ node {
 
     stage ('Artifactory configuration') {
         // Obtain an Artifactory server instance, defined in Jenkins --> Manage Jenkins --> Configure System:
-		#SERVER_ID=artifactory
+	//SERVER_ID=artifactory
         server = Artifactory.server artifactory
         // Host:
         // On OSX: "tcp://127.0.0.1:1234"
         // On Linux can be omitted or null
-		#HOST_NAME=http://43.204.10.182:8082
-        rtDocker = Artifactory.docker server: server, host: "http://43.204.10.182:8082"
+	//HOST_NAME=http://43.204.10.182:8082
+        rtDocker = Artifactory.docker server: server, host: "http://localhost:8082"
         buildInfo = Artifactory.newBuildInfo()
     }
 /*
